@@ -15,12 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
- 
- 
- 
- 
- 
- 
+ int
+ float
+ double
+ char
+ bool
+ void
  
  
  
@@ -56,10 +56,31 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    int people = 1;
+    int boy = 3;
+    int girl = 4;
+
+    float price = 5.5f;
+    float kilo = 6.3f;
+    float meter = 7.6f;
+
+    double speed = 2.1;
+    double time = 10.53;
+    double size = 9.5;
+
+    char grade = 'a';
+    char level = 'b';
+    char list = 'c';
+
+    bool audioPluginCodeEasy = false;
+    bool audioPluginCodeHard = true;
+    bool codeMakePeopleBald = true;
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+
+    
+    ignoreUnused(number, people, boy, girl, price, kilo, meter, speed, time, size, grade, level, list, audioPluginCodeEasy, audioPluginCodeHard, codeMakePeopleBald); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -72,45 +93,85 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
     return {}; //if your function returns something other than void, add 'return {};' at the end of it.
 } 
 
-/*
- 1)
- */
 
-/*
- 2)
- */
+int countDown(int numberOfBoy = 1, int numberOfGirl = 2)
+{
+    ignoreUnused(numberOfBoy, numberOfGirl);
+    return {}; 
+} 
+ 
 
-/*
- 3)
- */
 
-/*
- 4)
- */
+int chickenAndRabbit(int chicken, int rabbit = 3)
+{
+    ignoreUnused(chicken, rabbit);
+    return {};
+}
+ 
 
-/*
- 5)
- */
 
-/*
- 6)
- */
+bool buyACar(int carQuality = 1, double carPrice = 1.5)
+{
+    ignoreUnused(carQuality, carPrice);
+    return {};
+}
 
-/*
- 7)
- */
 
-/*
- 8)
- */
 
-/*
- 9)
- */
+bool learnCode(bool codeNeed = true, int codeType = 1)
+{
+    ignoreUnused(codeNeed, codeType);
+    return {};
+}
 
-/*
- 10)
- */
+
+
+bool feedDog(int dogHungry = 0, double feedTime = 8.0)
+{
+    ignoreUnused(dogHungry, feedTime);
+    return {};
+}
+
+
+
+void checkGrade(bool textFinshed = true, char gradeLevel = 'B')
+{
+    ignoreUnused(textFinshed, gradeLevel);
+    return ;
+}
+
+
+
+void loveCPP(int completeDay = 60, bool FallInLove = false)
+{
+    ignoreUnused(completeDay, FallInLove);
+    return ;
+}
+
+
+
+double runSpeed(int runTime = 23, double runMile = 3.3)
+{
+    ignoreUnused(runTime, runMile);
+    return {};
+}
+
+
+
+bool goOutside(bool weatherGood = true, bool needRelax = true)
+{
+    ignoreUnused(weatherGood, needRelax);
+    return {};
+}
+
+
+
+bool saveMoney(int moneyOwn = 5, int nextDayPaid = 20)
+{
+    ignoreUnused(moneyOwn, nextDayPaid);
+    return {};
+}
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -132,27 +193,28 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
+    auto classmatesCountedDown = countDown(2,5); 
     
     //2)
-    
+    auto chickAndRabbitMath = chickenAndRabbit(4, 6);
     //3)
-    
+    auto carBought = buyACar(4, 5.5);
     //4)
-    
+    auto codeLearnt = learnCode(true, 2);
     //5)
-    
+    auto dogFed = feedDog(1, 8.2);
     //6)
-    
+    checkGrade(true, 'B');
     //7)
-    
+    loveCPP(30, true);
     //8)
-    
+    auto speedOfRun = runSpeed(20, 3.0);
     //9)
-    
+    auto goOutsideOrNot = goOutside(false, true);
     //10)
+    auto saveMoneyOrNot = saveMoney(2,30);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, classmatesCountedDown, chickAndRabbitMath, carBought, codeLearnt, dogFed, checkGrade, loveCPP, speedOfRun, goOutsideOrNot, saveMoneyOrNot);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
